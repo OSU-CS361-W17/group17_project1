@@ -1,6 +1,6 @@
 package edu.oregonstate.cs361.battleship;
 
-public class Battleship {
+public class BattleshipModel {
 
 @SerializedName("name")
 @Expose
