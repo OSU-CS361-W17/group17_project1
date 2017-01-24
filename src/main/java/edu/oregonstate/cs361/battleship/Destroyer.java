@@ -1,3 +1,4 @@
+package edu.oregonstate.cs361.battleship;
 public class Destroyer{
 
 private String name;
