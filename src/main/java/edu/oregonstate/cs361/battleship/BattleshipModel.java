@@ -1,40 +1,18 @@
 package edu.oregonstate.cs361.battleship;
 
+/**
+ * Created by DanielSchroederMac on 1/23/17.
+ */
 public class BattleshipModel {
+    private ship aircraftShip;
 
-private String name;
-private Integer length;
-private String start;
-private String end;
 
-public String getName() {
-return name;
-}
+    public BattleshipModel (){
+        aircraftShip = new ship();
+    }
 
-public void setName(String name) {
-this.name = name;
-}
+    public BattleshipModel (ship aircraftShip) {
+        this.aircraftShip = new ship(aircraftShip);
+    }
 
-public Integer getLength() {
-return length;
-}
-
-public void setLength(Integer length) {
-this.length = length;
-}
-
-public Start getStart() {
-return start;
-}
-
-public void setStart(String start) {
-this.start = start;
-}
-
-public End getEnd() {
-return end;
-}
-
-public void setEnd(String end) {
-this.end = end;
 }
