@@ -284,11 +284,9 @@ public class BattleshipModel {
         cruiser.AIShipHitCheck(point,cruiser) == true || destroyer.AIShipHitCheck(point,destroyer) == true ||
                 submarine.AIShipHitCheck(point,submarine) == true){
             playerHits.add(point);
-            System.out.println(playerHits);
         }
         else{
             playerMisses.add(point);
-            System.out.println(playerMisses);
         }
 
 }
