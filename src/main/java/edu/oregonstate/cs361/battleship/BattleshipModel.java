@@ -389,9 +389,9 @@ public class BattleshipModel {
 
         ArrayList<Point> temp_Points = new ArrayList<Point>();
         ArrayList<Point> myPoints = null;
-        if(isHuman)
-            myPoints = HUMAN_Points;
-        else
+        //if(isHuman)
+        //    myPoints = HUMAN_Points;
+        //else
             myPoints = AI_Points;
 
         //first check to see if it runs off the page
