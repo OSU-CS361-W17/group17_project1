@@ -284,9 +284,11 @@ public class BattleshipModel {
         cruiser.AIShipHitCheck(point,cruiser) == true || destroyer.AIShipHitCheck(point,destroyer) == true ||
                 submarine.AIShipHitCheck(point,submarine) == true){
             playerHits.add(point);
+            System.out.println(playerHits);
         }
         else{
             playerMisses.add(point);
+            System.out.println(playerMisses);
         }
 
 }
@@ -341,6 +343,8 @@ public class BattleshipModel {
                 //get a random x,y value for start point
                 int tempAcross = (int) (Math.random() * 10 + 1);
                 int tempDown = (int) (Math.random() * 10 + 1);
+                int startacross = tempAcross;
+                int startdown = tempDown;
 
                 //checks if these are valid coordinates
                 if (isValidComputerMove(currentShip.getLength(), orientation, tempAcross, tempDown, false )){
@@ -351,18 +355,28 @@ public class BattleshipModel {
 
                         //adds points moving horizontally away from start
                         if(orientation == "horizontal") {
+
                             Point temp = new Point(tempAcross+i, tempDown);
                             //System.out.println("Adding Point: (" + temp.getAcross() +", " + temp.getDown() + ")");
                             AI_Points.add(temp);
                         }
                         //adds points moving vertically away from start
                         else{
+
                             Point temp = new Point(tempAcross, tempDown+i);
                             //System.out.println("Adding Point: (" + temp.getAcross() +", " + temp.getDown() + ")");
                             AI_Points.add(temp);
                         }
 
                     }
+                    if(orientation == "horizontal")
+                        tempAcross = tempAcross + currentShip.getLength()-1;
+                    else
+                        tempDown = tempDown + currentShip.getLength()-1;
+
+                    //System.out.println("Start:" + startacross + "'" + startdown + "  END: " + tempAcross + "' " + tempDown);
+                    currentShip.setStart(startacross, startdown);
+                    currentShip.setEnd(tempAcross, tempDown);
                     //test prints
                     /*
                     System.out.println("orientation:" + orientation);
@@ -389,9 +403,9 @@ public class BattleshipModel {
 
         ArrayList<Point> temp_Points = new ArrayList<Point>();
         ArrayList<Point> myPoints = null;
-        if(isHuman)
-            myPoints = HUMAN_Points;
-        else
+        //if(isHuman)
+        //    myPoints = HUMAN_Points;
+        //else
             myPoints = AI_Points;
 
         //first check to see if it runs off the page
