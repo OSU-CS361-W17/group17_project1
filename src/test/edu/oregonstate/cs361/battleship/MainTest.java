@@ -51,6 +51,15 @@ class MainTest {
         assertEquals(res.status, 200);
     }
 
+    @Test
+    public void testBadPlacement(){
+        BattleshipModel test = new BattleshipModel();
+        Gson gson = new Gson();
+        String model = gson.toJson(test);
+        TestResponse res = request("POST", "/placeShip/battleShip/11/11/horizontal", model);
+        assertEquals(res,null);
+    }
+
 
 
 

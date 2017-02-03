@@ -309,11 +309,6 @@ public class BattleshipModel {
         return result;
 
     }
-    private void fire() {
-        //  userFire();  ->NEEDS IMPLEMENTATION
-        Point point = AIfirePoint();
-        AIHitsAndMisses(point);
-    }
 
 
     public void placeComputerShips(){
